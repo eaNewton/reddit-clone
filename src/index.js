@@ -4,7 +4,6 @@ import { browserHistory } from 'react-router';
 
 import './css/style.css';
 
-import App from './containers/App';
 import Routes from './routes';
 import registerServiceWorker from './utils/registerServiceWorker';
 

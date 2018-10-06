@@ -4,7 +4,7 @@ import * as firebase from 'firebase';
 import config from './firebase-config';
 
 class App extends Component {
-  constructor() {
+  constructor(props) {
     super();
 
     // Initialize Firebase
