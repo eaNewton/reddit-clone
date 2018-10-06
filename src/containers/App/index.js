@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import * as firebase from 'firebase';
+
 import config from './firebase-config';
 
 class App extends Component {
@@ -8,6 +9,11 @@ class App extends Component {
 
     // Initialize Firebase
     firebase.initializeApp(config);
+  }
+
+  state = {
+    posts: [],
+    loading: true
   }
 
   componentWillMount() {
