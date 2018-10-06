@@ -14,14 +14,16 @@ class Posts extends Component {
 
     return (
       <div className="Posts">
-        { Object.keys(posts).map(function(key) {
-          return (
-            <div className="single-post" key={key}>
-              { posts[key].title }
-              { posts[key].content }
-            </div>
-          );
-        })}
+        <div className="posts-container">
+          {Object.keys(posts).map(function (key) {
+            return (
+              <div className="single-post" key={key}>
+                <h2 className="post-title">{posts[key].title}</h2>
+                {posts[key].content}
+              </div>
+            );
+          })}
+        </div>
       </div>
     );
   }
