@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 
 class Posts extends Component {
+
   handleUpvote = (post, key) => {
     this.props.firebase.ref('posts/' + key).set({
       title: post.title,

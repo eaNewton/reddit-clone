@@ -8,7 +8,10 @@ class App extends Component {
     super();
 
     // Initialize Firebase
-    firebase.initializeApp(config);
+    firebase
+      .initializeApp(config)
+      .database()
+      .ref();
   }
 
   state = {
@@ -35,7 +38,7 @@ class App extends Component {
     return (
       <div className="App">
         {this.props.children && React.cloneElement(this.props.children, {
-          firebaseRef: firebase.database().ref('posts'),
+          firebase: firebase.database(),
           posts: this.state.posts,
           loading: this.state.loading
         })}
