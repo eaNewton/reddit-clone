@@ -14,7 +14,9 @@ class AddPost extends Component {
 
   handleChange = (e) => {
     this.setState({
-      title: e.target.value
+      title: e.target.value,
+      upvote: null,
+      downvote: null
     });
   }
 

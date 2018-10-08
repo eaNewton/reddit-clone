@@ -39,7 +39,6 @@ class Posts extends Component {
           {Object.keys(posts).map(function (key) {
             return (
               <div className="single-post" key={key}>
-                <div className="score-container">
                   <div className="upvote">
                     Upvotes: { posts[key].upvote }
                     <button 
@@ -57,7 +56,6 @@ class Posts extends Component {
                     >
                       Downvote
                     </button>
-                  </div>
                 </div>
                 <h2 className="post-title">{posts[key].title}</h2>
               </div>
