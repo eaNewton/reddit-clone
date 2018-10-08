@@ -3,6 +3,8 @@ import * as firebase from 'firebase';
 
 import config from './firebase-config';
 
+const Header = ({title}) => (<header>{title}</header>);
+
 class App extends Component {
   constructor(props) {
     super();

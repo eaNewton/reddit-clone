@@ -1,6 +1,8 @@
 .Posts {
   .posts-container {
     .single-post {
+      display: flex;
+      align-items: center;
       margin: 15px 0;
       padding: 15px;
       border: 1px solid white;
@@ -9,6 +11,52 @@
       &:hover {
         background: #fafafa;
         border: 1px solid lightgray;
+      }
+
+      .votes-container {
+        flex: 0 0 20%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 15px;
+
+        .score-container {
+          padding: 15px;
+          font-family: 'Roboto', sans-serif;
+          font-size: 20px;
+        }
+
+        .upvote {
+          /* background: #FF5454; */
+
+          button#upvote {
+            background-size: cover;
+          }
+        }
+
+        .downvote {
+          /* background: #3BADFF; */
+
+          button#downvote {
+            background-size: cover;
+          }
+        }
+
+        button {
+          width: 20px;
+          height: 20px;
+          border: none;
+          background: transparent;
+
+          &:hover {
+            cursor: pointer;
+          }
+
+          &:active, &:focus {
+            border: none;
+            outline: none;
+          }
+        }
       }
 
       .post-title {

@@ -1,7 +1,9 @@
 import React, { Component } from 'react';
 
-class Posts extends Component {
+import upvote from '../../img/upvote.svg';
+import downvote from '../../img/downvote.svg';
 
+class Posts extends Component {
   handleUpvote = (post, key) => {
     this.props.firebase.ref('posts/' + key).set({
       title: post.title,
@@ -40,23 +42,32 @@ class Posts extends Component {
           {Object.keys(posts).map(function (key) {
             return (
               <div className="single-post" key={key}>
+                <div className="votes-container">
                   <div className="upvote">
-                    Upvotes: { posts[key].upvote }
+                    {/* Upvotes: { posts[key].upvote } */}
                     <button 
+                      id="upvote"
                       onClick={ _this.handleUpvote.bind(this, posts[key], key) }
                       type="button"
+                      style={{backgroundImage: `url(${upvote})`}}
                     >
-                      Upvote
+                      {/* Upvote */}
                     </button>
                   </div>
+                  <div className="score-container">
+                    { posts[key].upvote - posts[key].downvote }
+                  </div>
                   <div className="downvote">
-                    Downvotes: { posts[key].downvote }
+                    {/* Downvotes: { posts[key].downvote } */}
                     <button
+                      id="downvote"
                       onClick={ _this.handleDownvote.bind(this, posts[key], key) }
                       type="button"
+                      style={{backgroundImage: `url(${downvote})`}}
                     >
-                      Downvote
+                      {/* Downvote */}
                     </button>
+                  </div>
                 </div>
                 <h2 className="post-title">{posts[key].title}</h2>
               </div>
